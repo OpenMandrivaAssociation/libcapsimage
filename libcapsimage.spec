@@ -12,6 +12,7 @@ URL:		https://www.kryoflux.com/
 Source0:	https://www.kryoflux.com/download/spsdeclib_%{version}_source.zip
 BuildRequires:	unzip
 BuildRequires:	make
+BuildRequires:	gnu-config
 Requires:	%{libname} = %{EVRD}
 
 %description
