@@ -1,11 +1,11 @@
 %define major	5
-%define libname	%mklibname capsimage %{major}
+%define libname	%mklibname capsimage
 %define devname	%mklibname capsimage -d
 
 Summary:	SPS Decoder Library for IPF and CTR disk images
 Name:		libcapsimage
 Version:	5.1
-Release:	2
+Release:	3
 License:	SPSFLA
 Group:		System/Libraries
 URL:		https://www.kryoflux.com/
@@ -25,6 +25,7 @@ The library is free for non-commercial use only; see LICENCE.txt.
 %package -n %{libname}
 Summary:	Shared library for libcapsimage
 Group:		System/Libraries
+Obsoletes:	%{mklibname capsimage %{major}} < %{EVRD}
 
 %description -n %{libname}
 Shared SPS Decoder Library used to read IPF, CTR and KryoFlux floppy images.
@@ -76,7 +77,7 @@ EOF
 %license LICENCE.txt
 
 %files -n %{libname}
-%{_libdir}/libcapsimage.so.%{major}*
+%{_libdir}/libcapsimage.so.*
 
 %files -n %{devname}
 %{_libdir}/libcapsimage.so
